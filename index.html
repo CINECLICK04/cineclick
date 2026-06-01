@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINECLICK | Tu cine a solo un CLICK</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">CINE<span>CLICK</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><button class="btn-filtro active" data-category="all">Inicio</button></li>
+                <li><button class="btn-filtro" data-category="Accion">Acción</button></li>
+                <li><button class="btn-filtro" data-category="Terror">Terror</button></li>
+                <li><button class="btn-filtro" data-category="Suspenso">Suspenso</button></li>
+                <li><button class="btn-filtro" data-category="Familiar">Familiar</button></li>
+                <li><button class="btn-filtro" data-category="Comedia">Comedia</button></li>
+                <li><button class="btn-filtro" data-category="Historia">Historia</button></li>
+                <li><button class="btn-filtro" data-category="serie">Series</button></li>
+                <li><button class="btn-filtro" data-category="Drama">Drama</button></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" id="buscador" placeholder="Buscar película...">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tus películas favoritas en un solo lugar</h1>
+            <p>Descargas rápidas y streaming en HD con la mejor experiencia.</p>
+            <a href="#catalogo" class="btn-hero">Explorar Ahora</a>
+        </div>
+    </section>
+
+    <main id="catalogo">
+        <h2 class="section-title">Catálogo de Estrenos</h2>
+        <div id="contenedor-peliculas" class="grid-peliculas">
+            </div>
+    </main>
+
+    <div id="modal-peli" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <footer class="footer-pro">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2 class="logo">CINE<span>CLICK</span></h2>
+                <p>La mejor plataforma para disfrutar del cine sin límites. Calidad HD y descargas seguras.</p>
+                <div class="socials">
+                    <a href="#">FB</a> <a href="#">IG</a> <a href="#">TW</a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#" onclick="mostrarTodo()">Catálogo</a></li>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Reportar Link Caído</h3>
+                <form id="form-reporte">
+                    <input type="email" placeholder="Tu correo..." required>
+                    <textarea placeholder="Nombre de la película..." required></textarea>
+                    <button type="submit" class="btn-descarga">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 CINECLICK | Proyecto 
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
