@@ -15,7 +15,7 @@ const peliculas = [
         titulo: "Michael(2026)",
         categoria: "Drama",
         imagen: "michael.jpg",
-        sinopsis: "En las peligrosas favelas de Río de Janeiro, el capitán Nascimento, líder del Batallón de Operaciones Policiales Especiales (BOPE), busca a un sustituto idóneo para su puesto mientras intenta pacificar la zona.",
+        sinopsis: "El viaje de Michael Jackson más allá de la música, desde el descubrimiento de su extraordinario talento como líder de los Jackson Five hasta convertirse en una visionaria estrella cuya ambición creativa despertó un incansable afán por consagrarse como el mayor icono de la industria del entretenimiento.",
         linkReproductor: "https://archive.org/embed/michael.-2026.1080p.-camrip.-v-2.-lat.-ofdub.-1-xbet", 
         linkDescarga: "https://ia800500.us.archive.org/32/items/michael.-2026.1080p.-camrip.-v-2.-lat.-ofdub.-1-xbet/Michael.2026.1080p.CAMRip.V2.LAT.OFDUB.1XBET.mp4" 
     }
