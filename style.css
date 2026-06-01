@@ -306,3 +306,23 @@ body {
     font-size: 0.8rem;
     color: var(--text-gray);
 }
+
+/* Contenedor para centrar el banner publicitario */
+.banner-publicitario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px; /* Espacio hacia abajo */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.banner-publicitario:hover {
+    opacity: 1; /* Se ilumina por completo al pasar el mouse */
+}
+
+.banner-publicitario img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; /* Bordes ligeramente suavizados */
+}
