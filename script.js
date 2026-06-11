@@ -40,7 +40,8 @@ const peliculas = [
                 sinopsis: "Obligado por una deuda del pasado, John viaja a Roma...",
                 linkReproductor: "https://archive.org/embed/tu_enlace_jw2",
                 linkDescarga: "https://ouo.io/enlace_jw2"
-            }
+            },
+            
              {
                 titulo: "John Wick: Capítulo 3 ",
                 categoria: "Accion",
