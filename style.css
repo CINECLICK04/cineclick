@@ -57,7 +57,7 @@ body {
     background: var(--primary);
 }
 
-/* HERO SECTION (ESTILO PREMIUM NETFLIX) */
+/* HERO SECTION (ESTILO PREMIUM NETFLIX TOTALMENTE CENTRADO) */
 .hero {
     height: 65vh;
     min-height: 400px;
@@ -75,11 +75,12 @@ body {
 .hero-content {
     max-width: 800px;
     z-index: 2;
+    margin: 0 auto; /* Centrado horizontal absoluto */
 }
 
 .hero-content h1 { 
     font-size: clamp(2rem, 5vw, 3.8rem);
-    margin-bottom: 15px; 
+    margin: 0 0 15px 0; 
     font-weight: 900; 
     letter-spacing: -1px;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
@@ -160,7 +161,7 @@ body {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.25s ease;
-    pointer-events: none; /* 👈 ÚNICO CAMBIO: El clic ahora "atraviesa" el overlay */
+    pointer-events: none; /* El clic atraviesa el overlay */
 }
 
 .overlay span {
@@ -211,46 +212,6 @@ body {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* SECCIÓN SAGAS INTERACTIVAS */
-#selector-saga {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-    margin: 25px 0;
-    padding: 10px;
-}
-
-.item-saga-tarjeta {
-    background: #181818;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    text-align: center;
-    border: 1px solid #282828;
-    transition: var(--transition);
-}
-
-.item-saga-tarjeta:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
-    box-shadow: 0 8px 20px rgba(229, 9, 20, 0.2);
-}
-
-.item-saga-tarjeta img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-    display: block;
-}
-
-.item-saga-tarjeta h4 {
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 10px 5px;
-    margin: 0;
-    color: var(--text-white);
-}
-
 /* BUSCADOR */
 .search-box input {
     background: #141414;
@@ -266,6 +227,99 @@ body {
 .search-box input:focus { 
     border-color: var(--primary); 
     width: 240px;
+}
+
+/* 🛠️ ENLACE DE LAS REGLAS DEL FOOTER AJUSTADO Y CENTRADO */
+.footer-pro {
+    background-color: #050505;
+    padding: 60px 5% 30px 5%;
+    border-top: 1px solid #141414;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el bloque entero en pantallas grandes */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 0 20px 0;
+    border-left: 3px solid var(--primary);
+    padding-left: 10px;
+}
+
+.footer-section p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.footer-section ul {
+    list-style: none; /* Elimina los puntos por defecto de las listas */
+    padding: 0; 
+    margin: 0;
+}
+
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a {
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+.footer-section ul li a:hover { color: white; padding-left: 4px; }
+
+.socials { display: flex; gap: 15px; margin-top: 15px; }
+.socials a { color: var(--text-gray); text-decoration: none; font-weight: bold; transition: var(--transition); }
+.socials a:hover { color: var(--primary); }
+
+/* FORMULARIO DE REPORTES PREMIUM */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    background: #111;
+    border: 1px solid #222;
+    color: white;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
+.contact-form textarea { height: 70px; resize: none; }
+
+.btn-reporte {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn-reporte:hover { background: var(--primary-hover); }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #141414;
+    color: #555;
+    font-size: 0.85rem;
 }
 
 /* RESPONSIVE DESIGN (MEDIA QUERIES) */
@@ -285,5 +339,20 @@ body {
     }
     .search-box input:focus { 
         width: 100%;
+    }
+    /* El footer en móviles se apila verticalmente de forma limpia y centrada */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-section h3 {
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 2px solid var(--primary);
+        display: inline-block;
+        padding-bottom: 4px;
+    }
+    .socials {
+        justify-content: center;
     }
 }
