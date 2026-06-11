@@ -29,7 +29,7 @@ const peliculas = [
                 titulo: "John Wick 1: Sin Control (2014)",
                 categoria: "Accion",
                 imagen: "johnwick1.jpg",
-                sinopsis: "John Wick emerge de su retiro para cazar a los mafiosos...",
+                sinopsis: "John Wick emerge de su retirement para cazar a los mafiosos...",
                 linkReproductor: "https://archive.org/embed/jonh-wick-1",
                 linkDescarga: "https://ia801908.us.archive.org/24/items/jonh-wick-1/jonh%20wick%201.mp4"
             },
@@ -38,11 +38,11 @@ const peliculas = [
                 categoria: "Accion",
                 imagen: "johnwick2.png",
                 sinopsis: "Obligado por una deuda del pasado, John viaja a Roma...",
-                linkReproductor: "https://archive.org/embed/tu_enlace_jw2",
-                linkDescarga: "https://ouo.io/enlace_jw2"
+                linkReproductor: "https://archive.org/embed/john.wick.chapter.-2.2017.1080-p-dual-lat",
+                linkDescarga: "https://ia600608.us.archive.org/23/items/john.wick.chapter.-2.2017.1080-p-dual-lat/John.wick.chapter.2.2017.1080P-Dual-Lat.mp4"
             },
             {
-                titulo: "John Wick: Capítulo 3",
+                titulo: "John Wick: Capítulo 3 ",
                 categoria: "Accion",
                 imagen: "johnwick3.jpg",
                 sinopsis: "John Wick (Keanu Reeves) regresa a la acción, solo que esta vez con una recompensa de 14 millones de dólares sobre su cabeza...",
@@ -53,7 +53,7 @@ const peliculas = [
     }
 ];
 
-// 1. FUNCIÓN PARA MOSTRAR PELÍCULAS (CORREGIDA PARA HEREDAR TU CSS)
+// 1. FUNCIÓN PARA MOSTRAR PELÍCULAS (Mantiene tu diseño original intacto)
 function mostrarPeliculas(lista) {
     const contenedor = document.getElementById('contenedor-peliculas');
     if (!contenedor) return; 
@@ -63,18 +63,20 @@ function mostrarPeliculas(lista) {
     lista.forEach(peli => {
         const card = document.createElement('div');
         card.className = 'pelicula-card';
+        // Agregamos el click a la tarjeta para que responda siempre
+        card.setAttribute('onclick', `abrirModal(${peli.id})`);
         
-        // Se eliminó .card-img-container para que el CSS funcione de forma nativa
-        // Se añade un fallback onerror por si la imagen local tiene problemas de extensión
         card.innerHTML = `
-            <img src="${peli.imagen}" alt="${peli.titulo}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=600&auto=format&fit=crop';">
-            <div class="overlay" onclick="abrirModal(${peli.id})">
-                <span>▶ ${peli.esSaga ? 'VER SAGA' : 'REPRODUCIR'}</span>
+            <div class="card-img-container">
+                <img src="${peli.imagen}" alt="${peli.titulo}">
+                <div class="overlay">
+                    <span>▶ ${peli.esSaga ? 'VER SAGA' : 'REPRODUCIR'}</span>
+                </div>
             </div>
             <div class="info-peli">
                 <h3>${peli.titulo}</h3>
                 <p class="tag-categoria">${peli.categoria}</p>
-                <button class="btn-ver" onclick="abrirModal(${peli.id})">
+                <button class="btn-ver">
                     ${peli.esSaga ? 'Ver Saga' : 'Ver Ahora'}
                 </button>
             </div>
@@ -113,11 +115,12 @@ function abrirModal(id) {
             const item = document.createElement('div');
             item.className = 'item-saga-tarjeta';
             item.innerHTML = `
-                <img src="${parte.imagen}" alt="${parte.titulo}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=300&auto=format&fit=crop';">
+                <img src="${parte.imagen}" alt="${parte.titulo}">
                 <h4>${parte.titulo}</h4>
             `;
             
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita errores de propagación en el click
                 selectorSaga.style.display = "none";
                 construirReproductorHTML(parte);
             });
@@ -153,7 +156,7 @@ function construirReproductorHTML(peliDatos) {
             <a href="${peliDatos.linkDescarga}" target="_blank" style="text-align: center; text-decoration: none; padding: 12px; background: #e50914; color: white; display: block; border-radius: 5px; font-size: 15px;">
                 <strong>📥 Descargar Película Directa (Alta Calidad)</strong>
             </a>
-            <button onclick="cerrarModal()" class="btn-ver" style="background: #333; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%;">
+            <button onclick="event.stopPropagation(); cerrarModal();" class="btn-ver" style="background: #333; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%;">
                 Volver al Catálogo
             </button>
         </div>
@@ -179,6 +182,7 @@ document.getElementById('buscador').addEventListener('input', (e) => {
     const filtradas = peliculas.filter(p => {
         const coincidePrincipal = p.titulo.toLowerCase().includes(termino);
         const coincideEnSaga = p.esSaga && p.coleccion.some(subPeli => subPeli.titulo.toLowerCase().includes(termino));
+        
         return coincidePrincipal || coincideEnSaga;
     });
     
