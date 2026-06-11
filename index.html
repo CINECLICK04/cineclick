@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -50,54 +49,53 @@
 
     <div id="modal-peli" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal()">&times;</span>
-            <div id="modal-body">
-                </div>
+            <div id="modal-body"></div>
+            
+            <div id="selector-saga"></div>
         </div>
     </div>
 
     <footer class="footer-pro">
-        <footer class="footer-pro">
+        
+        <div class="banner-publicitario" style="text-align: center; margin-bottom: 30px;">
+            <a href="http://ouo.io/ref/BpVY4RPC" target="_blank">
+                <img src="http://ouo.io/images/banners/r2.jpg" alt="Publicidad ouo.io" title="ouo.io - Crea enlaces cortos y gana dinero" />
+            </a>
+        </div>
 
-    <div class="banner-publicitario">
-        <a href="http://ouo.io/ref/BpVY4RPC" target="_blank">
-            <img src="http://ouo.io/images/banners/r2.jpg" title="ouo.io - Crea enlaces cortos y gana el mayor dinero" />
-        </a>
-    </div>
-
-    <p>La mejor plataforma para disfrutar del cine sin límites...</p>
-    </footer>
         <div class="footer-content">
             <div class="footer-section about">
                 <h2 class="logo">CINE<span>CLICK</span></h2>
-                <p>La mejor plataforma para disfrutar del cine sin límites. Calidad HD y descargas seguras.</p>
+                <p>La mejor plataforma para disfrutar del cine sin límites. Calidad HD y descargas seguras de forma directa.</p>
                 <div class="socials">
                     <a href="#">FB</a> <a href="#">IG</a> <a href="#">TW</a>
                 </div>
             </div>
+            
             <div class="footer-section links">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="#" onclick="mostrarTodo()">Catálogo</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
                     <li><a href="#">Términos de Uso</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section contact-form">
                 <h3>Reportar Link Caído</h3>
-                <form id="form-reporte">
+                <form id="form-reporte" onsubmit="alert('Reporte recibido. Revisaremos el enlace de inmediato.'); this.reset(); return false;">
                     <input type="email" placeholder="Tu correo..." required>
-                    <textarea placeholder="Nombre de la película..." required></textarea>
-                    <button type="submit" class="btn-descarga">Enviar</button>
+                    <textarea placeholder="Nombre de la película afectada..." required></textarea>
+                    <button type="submit" class="btn-descarga">Enviar Reporte</button>
                 </form>
             </div>
         </div>
+
         <div class="footer-bottom">
-            &copy; 2026 CINECLICK | Proyecto 
+            <p>&copy; 2026 CINECLICK | Proyecto Streaming Premium. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
