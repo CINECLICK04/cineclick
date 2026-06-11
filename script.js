@@ -27,7 +27,7 @@ const peliculas = [
         coleccion: [
             {
                 titulo: "John Wick 1: Sin Control (2014)",
-                categoria: "Accion", // 👈 CORRECCIÓN: Añadida explícitamente para consistencia
+                categoria: "Accion",
                 imagen: "johnwick1.jpg",
                 sinopsis: "John Wick emerge de su retiro para cazar a los mafiosos...",
                 linkReproductor: "https://archive.org/embed/jonh-wick-1",
@@ -41,21 +41,19 @@ const peliculas = [
                 linkReproductor: "https://archive.org/embed/tu_enlace_jw2",
                 linkDescarga: "https://ouo.io/enlace_jw2"
             },
-
-             {
-                titulo: "John Wick: Capítulo 3 ",
+            {
+                titulo: "John Wick: Capítulo 3",
                 categoria: "Accion",
                 imagen: "johnwick3.jpg",
-                sinopsis: "John Wick (Keanu Reeves) regresa a la acción, solo que esta vez con una recompensa de 14 millones de dólares sobre su cabeza y con un ejército de mercenarios intentando darle caza. Tras asesinar a uno de los miembros del gremio de asesinos al que pertenecía, Wick es expulsado de la organización, pasando a convertirse en el centro de atención de multitud de asesinos a sueldo que esperan detrás de cada esquina para tratar de deshacerse de él.",
+                sinopsis: "John Wick (Keanu Reeves) regresa a la acción, solo que esta vez con una recompensa de 14 millones de dólares sobre su cabeza...",
                 linkReproductor: "https://archive.org/embed/jonh-wick-3",
                 linkDescarga: "https://ia601407.us.archive.org/1/items/jonh-wick-3/jonh%20wick%203.mp4"
             }
-            // ... resto de las películas de John Wick
         ]
     }
 ];
 
-// 1. FUNCIÓN PARA MOSTRAR PELÍCULAS
+// 1. FUNCIÓN PARA MOSTRAR PELÍCULAS (CORREGIDA PARA HEREDAR TU CSS)
 function mostrarPeliculas(lista) {
     const contenedor = document.getElementById('contenedor-peliculas');
     if (!contenedor) return; 
@@ -65,12 +63,13 @@ function mostrarPeliculas(lista) {
     lista.forEach(peli => {
         const card = document.createElement('div');
         card.className = 'pelicula-card';
+        
+        // Se eliminó .card-img-container para que el CSS funcione de forma nativa
+        // Se añade un fallback onerror por si la imagen local tiene problemas de extensión
         card.innerHTML = `
-            <div class="card-img-container">
-                <img src="${peli.imagen}" alt="${peli.titulo}">
-                <div class="overlay" onclick="abrirModal(${peli.id})">
-                    <span>▶ ${peli.esSaga ? 'VER SAGA' : 'REPRODUCIR'}</span>
-                </div>
+            <img src="${peli.imagen}" alt="${peli.titulo}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=600&auto=format&fit=crop';">
+            <div class="overlay" onclick="abrirModal(${peli.id})">
+                <span>▶ ${peli.esSaga ? 'VER SAGA' : 'REPRODUCIR'}</span>
             </div>
             <div class="info-peli">
                 <h3>${peli.titulo}</h3>
@@ -114,7 +113,7 @@ function abrirModal(id) {
             const item = document.createElement('div');
             item.className = 'item-saga-tarjeta';
             item.innerHTML = `
-                <img src="${parte.imagen}" alt="${parte.titulo}">
+                <img src="${parte.imagen}" alt="${parte.titulo}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=300&auto=format&fit=crop';">
                 <h4>${parte.titulo}</h4>
             `;
             
@@ -173,17 +172,13 @@ function cerrarModal() {
     selectorSaga.style.display = "none";
 }
 
-// 4. BUSCADOR INTEGRADO EN TIEMPO REAL (CORREGIDO)
+// 4. BUSCADOR INTEGRADO EN TIEMPO REAL
 document.getElementById('buscador').addEventListener('input', (e) => {
     const termino = e.target.value.toLowerCase();
     
     const filtradas = peliculas.filter(p => {
-        // Verifica si coincide el título principal de la película o saga
         const coincidePrincipal = p.titulo.toLowerCase().includes(termino);
-        
-        // Si es una saga, verifica si alguna de las películas internas coincide
         const coincideEnSaga = p.esSaga && p.coleccion.some(subPeli => subPeli.titulo.toLowerCase().includes(termino));
-        
         return coincidePrincipal || coincideEnSaga;
     });
     
