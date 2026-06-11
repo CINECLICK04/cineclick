@@ -21,7 +21,7 @@ const peliculas = [
         id: 3,
         titulo: "John Wick: La Saga Completa",
         categoria: "Accion",
-        imagen: "john wicksaga.jpg",
+        imagen: "johnwicksaga.png",
         esSaga: true, 
         sinopsis: "Sigue los pasos del legendario asesino de élite John Wick...",
         coleccion: [
@@ -31,7 +31,7 @@ const peliculas = [
                 imagen: "john wick 1.jpg",
                 sinopsis: "John Wick emerge de su retiro para cazar a los mafiosos...",
                 linkReproductor: "https://archive.org/embed/jonh-wick-1",
-                linkDescarga: "https://ouo.io/enlace_jw1"
+                linkDescarga: "https://ia801908.us.archive.org/24/items/jonh-wick-1/jonh%20wick%201.mp4"
             },
             {
                 titulo: "John Wick 2: Un Nuevo Día para Matar (2017)",
@@ -40,6 +40,14 @@ const peliculas = [
                 sinopsis: "Obligado por una deuda del pasado, John viaja a Roma...",
                 linkReproductor: "https://archive.org/embed/tu_enlace_jw2",
                 linkDescarga: "https://ouo.io/enlace_jw2"
+            }
+             {
+                titulo: "John Wick: Capítulo 3 ",
+                categoria: "Accion",
+                imagen: "john wick 3.jpg",
+                sinopsis: "John Wick (Keanu Reeves) regresa a la acción, solo que esta vez con una recompensa de 14 millones de dólares sobre su cabeza y con un ejército de mercenarios intentando darle caza. Tras asesinar a uno de los miembros del gremio de asesinos al que pertenecía, Wick es expulsado de la organización, pasando a convertirse en el centro de atención de multitud de asesinos a sueldo que esperan detrás de cada esquina para tratar de deshacerse de él.",
+                linkReproductor: "https://archive.org/embed/jonh-wick-3",
+                linkDescarga: "https://ia601407.us.archive.org/1/items/jonh-wick-3/jonh%20wick%203.mp4"
             }
             // ... resto de las películas de John Wick
         ]
