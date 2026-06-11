@@ -32,8 +32,8 @@ const peliculas = [
         categoria: "Accion",
         imagen: "jonhwick2.png",
         sinopsis: "Obligado por una deuda del pasado, John viaja a Roma para enfrentarse a los asesinos más peligrosos del mundo...",
-        linkReproductor: "https://archive.org/embed/tu_enlace_jw2",
-        linkDescarga: "https://ouo.io/enlace_jw2"
+        linkReproductor: "https://archive.org/embed/john.wick.chapter.-2.2017.1080-p-dual-lat",
+        linkDescarga: "https://ia600608.us.archive.org/23/items/john.wick.chapter.-2.2017.1080-p-dual-lat/John.wick.chapter.2.2017.1080P-Dual-Lat.mp4"
     },
     {
         id: 5,
