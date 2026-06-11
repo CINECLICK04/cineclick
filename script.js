@@ -21,7 +21,7 @@ const peliculas = [
         id: 3,
         titulo: "John Wick: La Saga Completa",
         categoria: "Accion",
-        imagen: "john wick.jpg",
+        imagen: "john wicksaga.jpg",
         esSaga: true, 
         sinopsis: "Sigue los pasos del legendario asesino de élite John Wick...",
         coleccion: [
