@@ -28,7 +28,7 @@ const peliculas = [
             {
                 titulo: "John Wick 1: Sin Control (2014)",
                 categoria: "Accion", // 👈 CORRECCIÓN: Añadida explícitamente para consistencia
-                imagen: "john wick 1.jpg",
+                imagen: "johnwick1.jpg",
                 sinopsis: "John Wick emerge de su retiro para cazar a los mafiosos...",
                 linkReproductor: "https://archive.org/embed/jonh-wick-1",
                 linkDescarga: "https://ia801908.us.archive.org/24/items/jonh-wick-1/jonh%20wick%201.mp4"
@@ -36,16 +36,16 @@ const peliculas = [
             {
                 titulo: "John Wick 2: Un Nuevo Día para Matar (2017)",
                 categoria: "Accion",
-                imagen: "john wick 2.png",
+                imagen: "johnwick2.png",
                 sinopsis: "Obligado por una deuda del pasado, John viaja a Roma...",
                 linkReproductor: "https://archive.org/embed/tu_enlace_jw2",
                 linkDescarga: "https://ouo.io/enlace_jw2"
             },
-            
+
              {
                 titulo: "John Wick: Capítulo 3 ",
                 categoria: "Accion",
-                imagen: "john wick 3.jpg",
+                imagen: "johnwick3.jpg",
                 sinopsis: "John Wick (Keanu Reeves) regresa a la acción, solo que esta vez con una recompensa de 14 millones de dólares sobre su cabeza y con un ejército de mercenarios intentando darle caza. Tras asesinar a uno de los miembros del gremio de asesinos al que pertenecía, Wick es expulsado de la organización, pasando a convertirse en el centro de atención de multitud de asesinos a sueldo que esperan detrás de cada esquina para tratar de deshacerse de él.",
                 linkReproductor: "https://archive.org/embed/jonh-wick-3",
                 linkDescarga: "https://ia601407.us.archive.org/1/items/jonh-wick-3/jonh%20wick%203.mp4"
